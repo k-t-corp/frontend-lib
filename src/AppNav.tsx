@@ -112,7 +112,7 @@ class SwipeableDrawer extends React.Component<SwipeableDrawerProps, {}> {
 
 interface AppNavProps {
   items: AppNavItem[],
-  children: React.ReactChildren
+  children: React.ReactNode
 }
 
 interface AppNavState {
@@ -143,6 +143,7 @@ class AppNav extends React.Component<AppNavProps, AppNavState> {
             this.setState({isDrawerOpen: false})
           }}
         />
+        {this.props.children}
       </React.Fragment>
     )
   }
