@@ -6,13 +6,12 @@
   "license": "MIT",
   "repository": "k-t-corp/frontend-lib",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format cjs",
     "prepare": "run-s build"
   },
   "peerDependencies": {

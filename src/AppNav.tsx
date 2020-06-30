@@ -58,7 +58,10 @@ const _AppBar = class extends React.Component<AppBarProps, {}> {
                     color="inherit"
                     startIcon={icon}
                     className={classes.sectionButton}
-                    onClick={action}
+                    onClick={e => {
+                      e.preventDefault()
+                      action()
+                    }}
                   >{text}</Button>
                 )
               }
@@ -97,7 +100,14 @@ class SwipeableDrawer extends React.Component<SwipeableDrawerProps, {}> {
         }}>
           {this.props.items.map(({text, icon, action}, i) => {
               return (
-                <ListItem button onClick={action} key={i}>
+                <ListItem
+                  button
+                  onClick={e => {
+                    e.preventDefault()
+                    action()
+                  }}
+                  key={i}
+                >
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText primary={text}/>
                 </ListItem>
