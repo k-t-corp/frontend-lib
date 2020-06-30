@@ -1,9 +1,4 @@
-import * as React from 'react'
+import AppNav from './AppNav'
+import AppNavItem from './AppNavItem'
 
-interface Props {
-  text: string
-}
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div>Example Component: {text}</div>
-}
+export { AppNav, AppNavItem }
