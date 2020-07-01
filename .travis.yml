@@ -1,3 +1,12 @@
 language: node_js
 node_js:
-  - 12
+- 12
+deploy:
+  provider: npm
+  email: whj19931115@gmail.com
+  api_key:
+    secure: vmXTwVt3SOtrMvL3dh7XaCzQlWh20UG/jRa86j2YaM30LyyxCvb6OckNSeBjTfrSwzmFgJJcViOBzyE1hQtaWlqkDWmNy9S7YGSXV7Pd0d359gq41PMTbw8J57oAlh/zKargjOz5jHgpNWjE6vSZMN5Cz3rHWmMqi6rg68EPQ3mD5zUBtPcWtIUSLapKNWu4KjZbrFphF5jrpXPNH9TXdtNzBLnktZZDubTZs10AeZXMsOBYsThIpU3dZBs8oJ5AKNQr9PcOx02AQSjldfSEbczDwEGB5R9y8C1QzTIT4SYlqwwJOCD5RH/kjJ2dCI3CXysHEBaUmZ2yfQ69UWCVTW8S/laRPj8Acb3qDbWj6Y6HZ8iHAhMJos5iZrVj0Ud4ltZEE1fYJN1vP1mgDYkl6heq/MXSg7H0VxN6dvcZPDzytEirmq+dY7JEpfKDX6R1eTTb6F/4ed+f9osRs6apcUYtsm4rbG72rM35y7BCBD5IGDxWtuph4h84HeBzzVbT7TY7L77mANucuh9bUXO8P+FRrvNd2m5VI9l9wqbr3ja4FH/EVrTSgNN/6G72Hf9wA0zYXkYbK3mZAVfuGgVw5OGJLwOJ8KYXJaQIUxMAGvkGFUFcq1v6AkDB4+HZTDmBUxXL0JUxGKpexp8yH9NITeOH7OImKKl126aOKdjescs=
+  on:
+    tags: true
+    repo: k-t-corp/frontend-lib
+  skip_cleanup: 'true'
