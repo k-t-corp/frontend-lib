@@ -14,7 +14,8 @@ import {
   List,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Box
 } from '@material-ui/core'
 import MenuIcon from "@material-ui/icons/Menu";
 import AppNavItem from './AppNavItem'
@@ -27,7 +28,9 @@ const appBarStyles = (theme: Theme) => createStyles({
 })
 
 interface AppBarProps extends WithStyles<typeof appBarStyles> {
+  title: string,
   items: AppNavItem[],
+  rightMostItem?: AppNavItem,
   openDrawer: () => void
 }
 
@@ -47,7 +50,7 @@ const _AppBar = class extends React.Component<AppBarProps, {}> {
             </IconButton>
           </Hidden>
           <Typography variant="h6" color="inherit" noWrap>
-            Herr あし
+            {this.props.title}
           </Typography>
           {/* Hide app bar menu items on smaller devices */}
           <Hidden xsDown={true}>
@@ -67,6 +70,21 @@ const _AppBar = class extends React.Component<AppBarProps, {}> {
               }
             )}
           </Hidden>
+          {
+            this.props.rightMostItem ?
+              <Box flexGrow={1} /> :
+              null
+          }
+          {
+            this.props.rightMostItem ?
+              <Button color="inherit" onClick={e => {
+                e.preventDefault();
+                (this.props.rightMostItem as AppNavItem).action()
+              }}>
+                {(this.props.rightMostItem as AppNavItem).text}
+              </Button> :
+              null
+          }
         </Toolbar>
       </MaterialUiAppBar>
     )
@@ -121,7 +139,9 @@ class SwipeableDrawer extends React.Component<SwipeableDrawerProps, {}> {
 }
 
 interface AppNavProps {
+  title: string,
   items: AppNavItem[],
+  rightMostItem?: AppNavItem,
   children: React.ReactNode
 }
 
@@ -141,7 +161,9 @@ class AppNav extends React.Component<AppNavProps, AppNavState> {
     return (
       <React.Fragment>
         <AppBar
+          title={this.props.title}
           items={this.props.items}
+          rightMostItem={this.props.rightMostItem}
           openDrawer={() => {
             this.setState({isDrawerOpen: true})
           }}
