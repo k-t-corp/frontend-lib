@@ -1,15 +1,13 @@
-# @k-t-corp/frontend-lib
+# frontend-lib
+K T Corp.'s frontend library based on material-ui
 
-> K T Corp.&#x27;s frontend library based on material-ui
-
-[![NPM](https://img.shields.io/npm/v/@k-t-corp/frontend-lib.svg)](https://www.npmjs.com/package/@k-t-corp/frontend-lib) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/k-t-corp/frontend-lib.svg?branch=master)](https://travis-ci.org/k-t-corp/frontend-lib.svg?branch=master)
+[![NPM](https://img.shields.io/npm/v/@k-t-corp/frontend-lib.svg)](https://www.npmjs.com/package/@k-t-corp/frontend-lib)
 
 ## Install
-
 ```bash
-npm install --save @k-t-corp/frontend-lib
+yarn add @k-t-corp/frontend-lib
 ```
 
 ## License
-
 MIT © [KTachibanaM](https://github.com/KTachibanaM)
